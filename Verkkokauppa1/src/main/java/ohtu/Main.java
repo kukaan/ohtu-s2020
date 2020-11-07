@@ -5,10 +5,12 @@ import ohtu.verkkokauppa.*;
 public class Main {
 
     public static void main(String[] args) {
-        PankkiInterface p = new Pankki();
-        VarastoInterface v = Varasto.getInstance();
-        ViitegeneraattoriInterface g = Viitegeneraattori.getInstance();
-        Kauppa kauppa = new Kauppa(v,p,g);
+        Kauppa kauppa = new Kauppa(
+                Varasto.getInstance(),
+                Pankki.getInstance(),
+                Viitegeneraattori.getInstance()
+        );
+
 
         // kauppa hoitaa yhden asiakkaan kerrallaan seuraavaan tapaan:
         kauppa.aloitaAsiointi();
