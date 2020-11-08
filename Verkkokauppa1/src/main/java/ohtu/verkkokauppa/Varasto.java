@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Varasto implements VarastoInterface {
 
-    
-    private Kirjanpito kirjanpito;
+
+    private KirjanpitoInterface kirjanpitoInterface;
     private HashMap<Tuote, Integer> saldot;  
     
-    public Varasto(Kirjanpito kirjanpito) {
-        this.kirjanpito = kirjanpito;
+    public Varasto(KirjanpitoInterface kirjanpitoInterface) {
+        this.kirjanpitoInterface = kirjanpitoInterface;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
@@ -31,13 +31,13 @@ public class Varasto implements VarastoInterface {
     @Override
     public void otaVarastosta(Tuote t){
         saldot.put(t,  saldo(t.getId())-1 );
-        kirjanpito.lisaaTapahtuma("otettiin varastosta "+t);
+        kirjanpitoInterface.lisaaTapahtuma("otettiin varastosta "+t);
     }
     
     @Override
     public void palautaVarastoon(Tuote t){
         saldot.put(t,  saldo(t.getId())+1 );
-        kirjanpito.lisaaTapahtuma("palautettiin varastoon "+t);
+        kirjanpitoInterface.lisaaTapahtuma("palautettiin varastoon "+t);
     }    
     
     private void alustaTuotteet() {
