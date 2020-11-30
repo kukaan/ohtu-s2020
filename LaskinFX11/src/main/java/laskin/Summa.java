@@ -10,6 +10,8 @@ public class Summa extends Komento {
 
     @Override
     public void suorita() {
+        this.edellinenTulos = tuloskentta.getText();
+
         int arvo = 0;
         try {
             arvo = Integer.parseInt(syotekentta.getText());
@@ -33,6 +35,7 @@ public class Summa extends Komento {
 
     @Override
     public void peru() {
-        //todo
+        tuloskentta.setText(edellinenTulos);
+        undo.disableProperty().set(true);
     }
 }

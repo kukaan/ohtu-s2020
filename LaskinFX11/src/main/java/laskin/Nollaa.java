@@ -10,6 +10,8 @@ public class Nollaa extends Komento {
 
     @Override
     public void suorita() {
+        this.edellinenTulos = tuloskentta.getText();
+
         sovellus.nollaa();
 
         int laskunTulos = sovellus.tulos();
@@ -27,6 +29,7 @@ public class Nollaa extends Komento {
 
     @Override
     public void peru() {
-        //todo
+        tuloskentta.setText(edellinenTulos);
+        undo.disableProperty().set(true);
     }
 }

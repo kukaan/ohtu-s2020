@@ -9,6 +9,7 @@ public abstract class Komento {
     Button nollaa;
     Button undo;
     Sovelluslogiikka sovellus;
+    String edellinenTulos;
 
     public Komento(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
         this.tuloskentta = tuloskentta;

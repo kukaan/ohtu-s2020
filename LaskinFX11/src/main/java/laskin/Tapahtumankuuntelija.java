@@ -20,7 +20,7 @@ public class Tapahtumankuuntelija implements EventHandler {
         this.sovellus = new Sovelluslogiikka();
         this.komennot = new HashMap<>();
         this.komennot.put(plus, new Summa(tuloskentta, syotekentta,  nollaa, undo, sovellus));
-        this.komennot.put(miinus, new Erotus(tuloskentta, syotekentta, nollaa, undo, sovellus));
+        this.komennot.put(miinus, new Erotus(tuloskentta, syotekentta,  nollaa, undo, sovellus));
         this.komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta,  nollaa, undo, sovellus));
     }
     
