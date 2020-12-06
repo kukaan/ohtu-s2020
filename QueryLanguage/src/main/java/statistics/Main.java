@@ -18,7 +18,7 @@ public class Main {
         }
 
 
-        System.out.println("\npart 1:");
+        System.out.println("\nt2:");
 
         m = new And(
                 new Not( new HasAtLeast(1, "goals") ),
@@ -37,6 +37,28 @@ public class Main {
         }
         System.out.println("964 =");
         System.out.println(stats.matches(new All()).size());
+
+
+        System.out.println("\nt3:");
+
+        m = new Or( new HasAtLeast(40, "goals"),
+                new HasAtLeast(60, "assists")
+        );
+        for (Player player : stats.matches(m)) {
+            System.out.println(player);
+        }
+        System.out.println();
+        m = new And(
+                new HasAtLeast(50, "points"),
+                new Or(
+                        new PlaysIn("NYR"),
+                        new PlaysIn("NYI"),
+                        new PlaysIn("BOS")
+                )
+        );
+        for (Player player : stats.matches(m)) {
+            System.out.println(player);
+        }
 
 
 
